@@ -1,0 +1,65 @@
+Regular commands:*
+-----------------
+
+git init			Create git repository
+
+git add .			Add all files/folders to index
+git add <filename>		Add specific file to index
+
+git rm <filename>		Delete file from working dir (?)
+git rm --cached <filename>	Remove from staging area.
+
+git mv <oldname> <newname>	Rename file
+
+git commit -m "Comment"		Push all changes from index to repository
+
+git checkout a1b2c3d4e5		Restore to previous version/commit, using first digits from hex identifier.
+git checkout -b new_branch	Checkout to new branch!
+
+git log				View git log (vb. commits)
+git log --oneline		(1 line per commit)
+git log --stat			detailed output (incl. files changed per commit)
+
+git status			View git status (files vs index vs repo)
+
+git stash list			List of work in progress changes that were stached.
+
+git diff a1z2e3r1 t4y5u6u78	View delta between 2 commits or branches (use first digits from hex identifier)
+git diff --Staged		(--> What changes have I staged that are ready to be committed?)
+				(--> What changes have I made but not yet made)
+
+git reset --soft		Move commits back to staging area
+git reset (--mixed)		Move commits back to working directory
+git reset --hard		Remove commits from git project
+
+git switch <branchename>	Switch branche
+git merge <branchename>		Merge branche into existing
+
+
+
+Distributed Version Control:
+----------------------------
+git clone <servername>		Copies entire repo to local machine (Local repo vs Remot Repo)
+git pull			Get latest commits from remote repo
+gitt push			Push latest commits towards remote repo
+
+Normal flow: 
+	- git clone <servername>
+	- "perform changes"
+	- git add
+	- git commit
+	- git pull
+	- git merge
+	- git push
+
+Open Source Workflow:
+---------------------
+- Create a 'fork' -> Create cloud copy of repo in own github space
+- Clone towards local repo to work on it.
+- Perform change
+- Commit/push to own cloud repo
+- Send a 'Pull Request' to owner of original repo
+
+Other (command prompt)
+-----
+clear				clear command prompt

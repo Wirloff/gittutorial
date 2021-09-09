@@ -1,0 +1,114 @@
+(use 'git switch' iso 'git checkout' in recent versions)
+	-> switch repoints HEAD to different branch
+	-> checkout repoints HEAD directly to a commit
+		(can be used to tryout temp stuff, when switching to actual branch again, 
+		latest commits will be garbage collected unless gathered under a new brand)
+		
+
+
+GIT OBJECT SYSTEM
+-----------------
+
+Types of objects in git object database:
+	commit
+	tree
+	blob
+	annotated tag (extra info object, points to a commit)
+
+- Calculate hash of object:
+	echo "Apple Pie" | git hash-object -w --stdin
+
+- Get type of hashed object:
+	git cat-file 23991897e13e47ed0adb91a0082c31c82fe0cbe5 -t
+
+- Print out actual content of hashed object:
+	git cat-file 23991897e13e47ed0adb91a0082c31c82fe0cbe5 -p
+
+- Count objects in git object database:
+	git count-objects
+
+
+BRANCHING & MERGING
+-------------------
+
+- Display overview of available branches:
+	git branch
+
+- !!! A branch is just a reference/pointer to a commit !!!
+
+- Object database -> branches stored in .git/refs/heads
+
+- Read content of branch file (eg. main)
+	cat .git/refs/heads/main
+
+- Create new branch
+	git branch branchname
+
+- HEAD file contains ref to the current branch 
+
+- Merge other branch into current HEAD branch:
+	git merge branchname
+
+- !!! a merge is just a commit with 2 parents !!! 
+
+- git-merge-base - Find as good common ancestors as possible for a merge
+
+
+REBASING
+--------
+
+- Rebasing: put commits of current branch 'on top of' of other branch... 
+	-> hashes of commits due change due to new parent hashes!
+
+	2 uses
+		- clean up history
+		- pull without merge
+
+vs merging:
+	Merging : preserves history exactly as it happened, however project history sometimes difficult to understand in large/complex projects.
+	Rebasing: rebase history looks neat & streamlined however commit links are not necesarrily representing actual time of commits!.
+
+
+TAGS
+----
+- Add info to commit (stored in .git\refs\tags)
+	git tag tagtest				(basic version)
+	git tag tagtest -a -m "First tag test"  (-a indicates annotated tag with metadata)
+
+	git tag
+	git checkout tagtest
+
+- a lightweight/default tag is a direct reference to a commit
+- an annotated tag is a reference to a tag object which:
+	contains metadata
+	points to actual commit
+
+DISTRIBUTED VERSION CONTROL
+--------------------------
+Git -> no need of centralized server/version. From a technical point of view, all git clones are equallly correct/complete.
+(Note: git clone will only take copy of 1 branch)
+
+All info regarding clone is stored in 'config' file.
+	'origin' is used as default remote repo
+
+Show all branches, including the remote ones:
+	git branch --all
+	--> references to remote branches is stored in /refs/remotes/branchname
+
+To see for all branches with 'xxx' in the name, to which commit they refer:
+	git show-ref xxx
+
+Pull vs Push
+	git pull = git fetch + git merge
+	git push vs git push -f (-f not a good idea..., changes pushed on remote by other people in new commits will be garbage collected)
+
+-> Shared commits? -> Never rebase!
+
+Contribute to public projects:
+Fork = remote project copy (github feature)
++
+Clone
++
+change/push
++
+pull request (github feature)
