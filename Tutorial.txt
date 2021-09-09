@@ -1,4 +1,5 @@
-
+Regular commands:
+-----------------
 
 git init			Create git repository
 
@@ -14,3 +15,29 @@ git status			View git status (files vs index vs repo)
 
 git diff a1z2e3r1 t4y5u6u78	View delta between 2 commits (use first digits from hex identifier)
 
+git switch <branchename>	Switch branche
+git merge <branchename>		Merge branche into existing
+
+
+Distributed Version Control:
+----------------------------
+git clone <servername>		Copies entire repo to local machine (Local repo vs Remot Repo)
+git pull			Get latest commits from remote repo
+gitt push			Push latest commits towards remote repo
+
+Normal flow: 
+	- git clone <servername>
+	- "perform changes"
+	- git add
+	- git commit
+	- git pull
+	- git merge
+	- git push
+
+Open Source Workflow:
+---------------------
+- Create a 'fork' -> Create cloud copy of repo in own github space
+- Clone towards local repo to work on it.
+- Perform change
+- Commit/push to own cloud repo
+- Send a 'Pull Request' to owner of original repo
