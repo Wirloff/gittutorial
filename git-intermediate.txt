@@ -61,3 +61,35 @@ REBASING
 vs merging:
 	Merging : preserves history exactly as it happened, however project history sometimes difficult to understand in large/complex projects.
 	Rebasing: rebase history looks neat & streamlined however commit links are not necesarrily representing actual time of commits!.
+
+
+TAGS
+----
+- Add info to commit (stored in .git\refs\tags)
+	git tag tagtest				(basic version)
+	git tag tagtest -a -m "First tag test"  (-a indicates annotated tag with metadata)
+
+	git tag
+	git checkout tagtest
+
+- a lightweight/default tag is a direct reference to a commit
+- an annotated tag is a reference to a tag object which:
+	contains metadata
+	points to actual commit
+
+DISTRIBUTED VERSION CONTROL
+--------------------------
+Git -> no need of centralized server/version. From a technical point of view, all git clones are equallly correct/complete.
+(Note: git clone will only take copy of 1 branch)
+
+All info regarding clone is stored in 'config' file.
+	'origin' is used as default remote repo
+
+Show all branches, including the remote ones:
+	git branch --all
+	--> references to remote branches is stored in /refs/remotes/branchname
+
+To see for all branches with 'xxx' in the name, to which commit they refer:
+	git show-ref xxx
+
+
