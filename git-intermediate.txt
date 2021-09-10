@@ -92,4 +92,17 @@ Show all branches, including the remote ones:
 To see for all branches with 'xxx' in the name, to which commit they refer:
 	git show-ref xxx
 
+Pull vs Push
+	git pull = git fetch + git merge
+	git push vs git push -f (-f not a good idea..., changes pushed on remote by other people in new commits will be garbage collected)
 
+-> Shared commits? -> Never rebase!
+
+Contribute to public projects:
+Fork = remote project copy (github feature)
++
+Clone
++
+change/push
++
+pull request (github feature)
