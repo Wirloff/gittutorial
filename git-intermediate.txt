@@ -1,0 +1,22 @@
+(- use 'git switch' iso 'git checkout' in recent versions)
+
+Types of objects in git object database:
+	commit
+	tree
+	blob
+	annotated tag (extra info object, points to a commit)
+
+- Calculate hash of object:
+	echo "Apple Pie" | git hash-object -w --stdin
+
+- Get type of hashed object:
+	git cat-file 23991897e13e47ed0adb91a0082c31c82fe0cbe5 -t
+
+- Print out actual content of hashed object:
+	git cat-file 23991897e13e47ed0adb91a0082c31c82fe0cbe5 -p
+
+- Count objects in git object database:
+	git count-objects
+
+- Display overview of available branches:
+	git branch
