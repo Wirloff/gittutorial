@@ -1,4 +1,4 @@
-(use 'git switch' iso 'git checkout' in recent versions)
+(8 use 'git switch' iso 'git checkout' in recent versions)
 
 GIT OBJECT SYSTEM
 -----------------
