@@ -1,5 +1,8 @@
 (- use 'git switch' iso 'git checkout' in recent versions)
 
+GIT OBJECT SYSTEM
+-----------------
+
 Types of objects in git object database:
 	commit
 	tree
@@ -18,5 +21,20 @@ Types of objects in git object database:
 - Count objects in git object database:
 	git count-objects
 
+BRANCHING & MERGING
+-------------------
+
 - Display overview of available branches:
 	git branch
+
+- !!! A branch is just a reference/pointer to a commit !!!
+
+- Object database -> branches stored in .git/refs/heads
+
+- Read content of branch file (eg. main)
+	cat .git/refs/heads/main
+
+- Create new branch
+	git branch branchname
+
+- HEAD file contains ref to the current branch 
