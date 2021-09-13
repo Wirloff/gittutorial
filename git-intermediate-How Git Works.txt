@@ -24,7 +24,7 @@ Types of objects in git object database:
 - Print out actual content of hashed object:
 	git cat-file 23991897e13e47ed0adb91a0082c31c82fe0cbe5 -p
 
-- Count objects in git object data base:
+- Count objects in git object database:
 	git count-objects
 
 
@@ -51,6 +51,11 @@ BRANCHING & MERGING
 
 - !!! a merge is just a commit with 2 parents !!! 
 
+<<<<<<< HEAD
+=======
+- git-merge-base - Find as good common ancestors as possible for a merge
+
+>>>>>>> 1796f2adac64ad78eb30d29ef943b738e606952c
 
 REBASING
 --------
@@ -58,6 +63,13 @@ REBASING
 - Rebasing: put commits of current branch 'on top of' of other branch... 
 	-> hashes of commits due change due to new parent hashes!
 
+<<<<<<< HEAD
+=======
+	2 uses
+		- clean up history
+		- pull without merge
+
+>>>>>>> 1796f2adac64ad78eb30d29ef943b738e606952c
 vs merging:
 	Merging : preserves history exactly as it happened, however project history sometimes difficult to understand in large/complex projects.
 	Rebasing: rebase history looks neat & streamlined however commit links are not necesarrily representing actual time of commits!.
@@ -106,8 +118,11 @@ Clone
 change/push
 +
 pull request (github feature)
+<<<<<<< HEAD
 
 OTHER
 -----
 See full reflog information
 	git reflog
+=======
+>>>>>>> 1796f2adac64ad78eb30d29ef943b738e606952c

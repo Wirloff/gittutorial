@@ -25,8 +25,13 @@ git status			View git status (files vs index vs repo)
 git stash list			List of work in progress changes that were stached.
 
 git diff a1z2e3r1 t4y5u6u78	View delta between 2 commits or branches (use first digits from hex identifier)
+<<<<<<< HEAD
 git diff --Staged (or --cached)	(--> What changes have I staged that are ready to be committed?)
 git diff 			(--> What changes have I made but not yet staged)
+=======
+git diff --Staged		(--> What changes have I staged that are ready to be committed?)
+				(--> What changes have I made but not yet made)
+>>>>>>> 1796f2adac64ad78eb30d29ef943b738e606952c
 
 git reset --soft		Move commits back to staging area
 git reset (--mixed)		Move commits back to working directory
@@ -40,7 +45,9 @@ git merge <branchename>		Merge branche into existing
 Distributed Version Control:
 ----------------------------
 git clone <servername>		Copies entire repo to local machine (Local repo vs Remot Repo)
+
 git pull  (git fetch + merge)	Get latest commits from remote repo
+
 gitt push			Push latest commits towards remote repo
 
 Normal flow: 
@@ -48,7 +55,11 @@ Normal flow:
 	- "perform changes"
 	- git add
 	- git commit
+<<<<<<< HEAD
 	- git pull  (= fetch + merge)
+=======
+	- git pull
+>>>>>>> 1796f2adac64ad78eb30d29ef943b738e606952c
 	- git merge
 	- git push
 
