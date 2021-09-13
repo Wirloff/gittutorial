@@ -51,12 +51,18 @@ BRANCHING & MERGING
 
 - !!! a merge is just a commit with 2 parents !!! 
 
+- git-merge-base - Find as good common ancestors as possible for a merge
+
 
 REBASING
 --------
 
 - Rebasing: put commits of current branch 'on top of' of other branch... 
 	-> hashes of commits due change due to new parent hashes!
+
+	2 uses
+		- clean up history
+		- pull without merge
 
 vs merging:
 	Merging : preserves history exactly as it happened, however project history sometimes difficult to understand in large/complex projects.

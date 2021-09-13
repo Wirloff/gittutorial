@@ -24,7 +24,7 @@ git status			View git status (files vs index vs repo)
 
 git stash list			List of work in progress changes that were stached.
 
-git diff a1z2e3r1 t4y5u6u78	View delta between 2 commits (use first digits from hex identifier)
+git diff a1z2e3r1 t4y5u6u78	View delta between 2 commits or branches (use first digits from hex identifier)
 git diff --Staged		(--> What changes have I staged that are ready to be committed?)
 				(--> What changes have I made but not yet made)
 
