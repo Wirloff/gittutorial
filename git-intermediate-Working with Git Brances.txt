@@ -1,0 +1,32 @@
+CHERRY PICKING
+--------------
+
+- Copy specific commits to another branch
+	git cherry-pick <commit>
+
+- Possible uses:
+	Bugfix for multiple versions of product
+	Capture commits from inactive branch
+
+
+- Check commits from other branch:
+	git log <branch-name> --oneline 
+
+
+SETTING UP REMOTES
+------------------
+
+	git clone <remote-url>
+
+	git remote -v 		list remotes and URLS
+
+	git ls-remote 		list remote branches
+
+	git push <branch>	push specific branche
+	
+	git fetch origin <branch> 	fetch specific branchµ
+	git checkout --track origin/<branch>	setup to track remote branche
+
+
+
+
